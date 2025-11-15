@@ -1,0 +1,152 @@
+/* Ghi đè container (nếu cần) */
+.missions-container {
+  border-color: #ffeb3b; /* Đổi viền sang màu Vàng */
+  box-shadow: 0 0 15px #ffeb3b;
+  margin-top: 150px; /* Cho nó lên cao hơn 1 chút */
+}
+
+.missions-container .customizer-header {
+  border-bottom: 2px solid #ffeb3b;
+}
+
+.missions-container .customizer-header h2 {
+  color: #ffeb3b;
+}
+
+.missions-section {
+  margin-bottom: 20px;
+}
+
+.missions-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.mission-card {
+  background-color: #333;
+  border: 2px solid #555;
+  border-radius: 8px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Thẻ nhiệm vụ đã nhận thưởng */
+.mission-card.claimed {
+  opacity: 0.5;
+  background-color: #222;
+}
+
+.mission-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mission-title {
+  font-size: 1.1em;
+  font-weight: 500;
+}
+
+.mission-reward {
+  font-size: 1.1em;
+  font-weight: bold;
+  color: #ffeb3b; /* Màu vàng */
+}
+
+/* Thanh tiến độ */
+.mission-progress {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.mission-progress-bar {
+  flex-grow: 1;
+  height: 20px;
+  background-color: #111;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #555;
+}
+
+.mission-progress-fill {
+  height: 100%;
+  background-color: #4caf50; /* Màu xanh lá */
+  width: 0%; /* Sẽ được cập nhật bằng style inline */
+  transition: width 0.5s ease;
+  box-shadow: 0 0 10px #4caf50;
+}
+
+.mission-progress-text {
+  font-size: 0.9em;
+  color: #ccc;
+}
+
+/* Nút Nhận thưởng */
+.mission-claim-btn {
+  width: 100%;
+  padding: 10px 5px;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  font-size: 16px;
+}
+
+/* Nút CHƯA HOÀN THÀNH */
+.mission-claim-btn.btn-disabled {
+  background: #777;
+  color: #ccc;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}
+
+/* Nút CÓ THỂ NHẬN (giống nút Chọn) */
+.mission-claim-btn.btn-claimable {
+  background: #4caf50;
+  color: #fff;
+  box-shadow: 0 0 10px rgba(76, 175, 80, 0.5);
+}
+.mission-claim-btn.btn-claimable:hover {
+  background: #66bb6a;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(76, 175, 80, 0.6);
+}
+
+/* Nút ĐÃ NHẬN (màu xanh dương) */
+.mission-claim-btn.btn-claimed {
+  background: #03a9f4;
+  color: white;
+  cursor: default;
+  box-shadow: none;
+}
+.customizer-container.missions-container {
+  margin-top: 0px ;
+  margin-left: -20px;
+}
+
+/* === THANH CUỘN CHO NHIỆM VỤ (Tái sử dụng từ Cửa hàng) === */
+/* Thêm các style này để đảm bảo thanh cuộn hoạt động */
+.customizer-content {
+  max-height: 450px; /* Giới hạn chiều cao */
+  overflow-y: auto;  /* Thêm thanh cuộn khi nội dung dài hơn */
+  padding-right: 15px; /* Tạo khoảng trống cho thanh cuộn */
+  margin-right: -15px; /* Bù lại padding để nội dung không bị lệch */
+}
+
+.customizer-content::-webkit-scrollbar {
+  width: 8px;
+}
+.customizer-content::-webkit-scrollbar-track {
+  background: #111;
+  border-radius: 4px;
+}
+.customizer-content::-webkit-scrollbar-thumb {
+  background-color: #ffeb3b; /* Màu vàng cho hợp với theme Nhiệm vụ */
+  border-radius: 4px;
+}

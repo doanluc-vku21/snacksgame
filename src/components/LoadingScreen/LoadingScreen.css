@@ -1,0 +1,104 @@
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #1a1a1a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  flex-direction: column;
+  color: white;
+  font-family: 'Press Start 2P', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  opacity: 1;
+  transition: opacity 0.5s ease-out;
+}
+
+.loading-overlay.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.loading-container {
+  width: 80%;
+  max-width: 400px;
+  text-align: center;
+  position: relative;
+}
+
+.loading-bar-container {
+  width: 100%;
+  height: 20px;
+  background-color: #333;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 2px solid #444;
+  margin-top: 20px;
+}
+
+.loading-bar {
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(90deg, #00ff00, #aaff00, #ffff00);
+  border-radius: 8px;
+  animation: fill-bar 2.5s ease-in-out forwards;
+  box-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00;
+}
+
+@keyframes fill-bar {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.loading-text {
+  margin-top: 25px;
+  font-size: 1em;
+  letter-spacing: 2px;
+  color: #00ff00;
+  text-shadow: 0 0 5px #00ff00;
+  animation: pulse-text 1.5s infinite alternate;
+}
+
+@keyframes pulse-text {
+  from {
+    opacity: 0.7;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.loading-snake {
+  position: absolute;
+  top: -10px; /* Position above the bar */
+  left: -15px; /* Start off-screen */
+  display: flex;
+  animation: move-snake 2.5s ease-in-out forwards;
+}
+
+.loading-snake-segment {
+  width: 20px;
+  height: 20px;
+  background-color: #00ff00;
+  border-radius: 50%;
+  margin-right: -5px; /* Overlap segments */
+  box-shadow: 0 0 8px #00ff00, inset 0 0 5px rgba(255, 255, 255, 0.7);
+  border: 1px solid #aaff00;
+}
+
+@keyframes move-snake {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(400px - 20px)); /* Move across the bar */
+  }
+}

@@ -1,0 +1,129 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.overlay h3 {
+  margin: 0;
+  padding-bottom: 10px;
+}
+
+.overlay button {
+  background: #4caf50;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 10px;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 6px;
+  color: white;
+  transition: 0.2s;
+}
+
+.overlay button:hover {
+  background: #66bb6a;
+}
+.overlay-buttons {
+  display: flex;
+  gap: 15px; /* Tạo khoảng cách giữa 2 nút */
+}
+
+/* Nút "Về Menu" mới */
+.overlay .menu-btn {
+  background: #6c757d; /* Màu xám */
+}
+
+.overlay .menu-btn:hover {
+  background: #5a6268;
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.overlay h2 {
+  font-size: 2.5em;
+  margin: 10px 0;
+}
+
+.overlay h3 {
+  margin: 0;
+  padding-bottom: 10px;
+  font-size: 1.5em;
+  font-weight: 400;
+}
+
+.overlay-buttons {
+  display: flex;
+  gap: 15px; /* Khoảng cách giữa 2 nút */
+  margin-top: 20px;
+}
+
+.overlay button {
+  background: #4caf50;
+  border: none;
+  padding: 10px 20px;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 6px;
+  color: white;
+  transition: 0.2s;
+}
+
+.overlay button:hover {
+  background: #66bb6a;
+}
+
+/* Nút "Về Menu" */
+.overlay .menu-btn {
+  background: #6c757d;
+}
+.overlay .menu-btn:hover {
+  background: #5a6268;
+}
+
+/* Nút "Bạn đã thắng" */
+.overlay .win-btn {
+  background: #03a9f4;
+  font-size: 20px;
+  padding: 15px 30px;
+  margin-top: 10px;
+}
+.overlay .win-btn:hover {
+  background: #0288d1;
+}
+
+/* --- CSS MỚI CHO NÚT "QUA MÀN" --- */
+.overlay .next-level-btn {
+  background: #03a9f4; /* Màu xanh dương */
+  font-size: 20px;
+  padding: 15px 30px;
+}
+.overlay .next-level-btn:hover {
+  background: #0288d1;
+}
+/* --- CSS MỚI CHO NÚT "TIẾP TỤC" --- */
+.overlay .resume-btn {
+  background: #4caf50; /* Màu xanh lá (giống nút Chơi lại) */
+  font-size: 20px;
+  padding: 15px 30px;
+}
+.overlay .resume-btn:hover {
+  background: #66bb6a;
+}

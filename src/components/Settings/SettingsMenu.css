@@ -1,0 +1,100 @@
+/* Kế thừa .customizer-container và .customizer-header */
+/* từ file ../SnakeCustomizer/SnakeCustomizer.css */
+
+.settings-content {
+  margin-top: 10px;
+}
+
+.setting-group {
+  margin-bottom: 25px;
+}
+
+.setting-group h3 {
+  color: #4caf50;
+  border-bottom: 1px solid #444;
+  padding-bottom: 5px;
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+
+.setting-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 5px;
+}
+
+.setting-item label {
+  font-size: 1.2em;
+  color: #ccc;
+}
+
+/* Nút Bật/Tắt */
+.toggle-btn {
+  font-size: 1em;
+  font-weight: bold;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  width: 80px;
+  transition: all 0.2s;
+}
+.toggle-btn.on {
+  background-color: #4caf50;
+  color: white;
+}
+.toggle-btn.off {
+  background-color: #6c757d;
+  color: #eee;
+}
+
+/* Nút Điều khiển */
+.control-toggle {
+  display: flex;
+}
+.control-btn {
+  font-size: 1.2em;
+  font-weight: bold;
+  padding: 10px 15px;
+  border: 2px solid #6c757d;
+  background-color: #333;
+  color: #888;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.control-btn:first-child {
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+.control-btn:last-child {
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+  border-left-width: 0;
+}
+
+.control-btn.active {
+  background-color: #4caf50;
+  color: white;
+  border-color: #4caf50;
+}
+/* --- CSS MỚI CHO DROPDOWN (SELECT) --- */
+.setting-select {
+  font-size: 1.1em;
+  font-weight: bold;
+  padding: 8px 10px;
+  border: 2px solid #6c757d;
+  border-radius: 6px;
+  background-color: #333;
+  color: #eee;
+  cursor: pointer;
+}
+
+.setting-select:focus {
+  outline: none;
+  border-color: #4caf50;
+}
+.customizer-container.settings-container{
+  margin-top: 0px ;
+  margin-left: -20px;
+}

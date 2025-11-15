@@ -1,0 +1,100 @@
+.leaderboard-container {
+  width: 100%;
+  max-width: 400px;
+  margin: 20px auto;
+  background-color: #222;
+  border: 3px solid #4caf50;
+  border-radius: 8px;
+  padding: 0 20px 20px 20px;
+  box-shadow: 0 0 15px #4caf50;
+  color: white;
+  text-align: left;
+}
+
+.leaderboard-tabs {
+  display: flex;
+  margin: 0 -20px 15px -20px;
+  border-bottom: 3px solid #4caf50;
+}
+
+.leaderboard-tabs button {
+  flex: 1; 
+  padding: 12px 10px;
+  font-size: 1.1em;
+  font-weight: bold;
+  color: #888;
+  background-color: #1a1a1a;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+/* --- CẬP NHẬT: CSS CHO 4 TABS --- */
+.leaderboard-tabs.tabs-4 button {
+  flex: 1;
+  padding: 10px 5px; /* Giảm padding */
+  font-size: 0.9em; /* Giảm font size */
+}
+
+.leaderboard-tabs button:first-child {
+  border-top-left-radius: 5px;
+}
+.leaderboard-tabs button:last-child {
+  border-top-right-radius: 5px;
+}
+
+.leaderboard-tabs button:hover {
+  color: #fff;
+  background-color: #333;
+}
+
+.leaderboard-tabs button.active {
+  color: #fff;
+  background-color: #4caf50;
+}
+
+.leaderboard-tabs button.obstacle-tab.active {
+  background-color: #e91e63;
+}
+/* --- CSS MỚI CHO TAB VERSUS --- */
+.leaderboard-tabs button.versus-tab.active {
+  background-color: #f44336;
+}
+
+
+.leaderboard-container ol {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.leaderboard-container li {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 10px;
+  margin-bottom: 5px;
+  background-color: #333;
+  border-radius: 4px;
+  font-size: 1.1em;
+}
+
+.leaderboard-container .rank {
+  font-weight: bold;
+  color: #4caf50;
+  margin-right: 15px;
+}
+
+.leaderboard-container .email {
+  font-weight: 600;
+  flex-grow: 1;
+}
+
+.leaderboard-container .score {
+  font-weight: bold;
+}
+
+.loading-text {
+  text-align: center;
+  padding: 20px;
+  color: #888;
+}

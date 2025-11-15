@@ -1,0 +1,68 @@
+.scores {
+  display: flex;
+  justify-content: space-between;
+  max-width: 400px;
+  margin: 0 auto 10px auto;
+  font-size: 1.1em;
+}
+
+/* Style chung cho 2 chế độ 'Màn' */
+.scores.level-mode {
+  border: 2px solid #03a9f4; /* Viền xanh */
+  padding: 5px 10px;
+  border-radius: 6px;
+  background-color: #222;
+  color: #eee;
+  flex-wrap: wrap; 
+  justify-content: space-around;
+}
+
+.scores.level-mode span {
+  flex-basis: 45%; 
+  text-align: center;
+  padding: 2px 0;
+}
+
+/* Viền màu hồng cho chế độ Chướng ngại vật */
+.scores.obstacle-mode {
+  border-color: #e91e63;
+}
+.scores {
+  display: flex;
+  justify-content: space-between;
+  max-width: 400px;
+  margin: 0 auto 10px auto;
+  font-size: 1.1em;
+}
+
+/* Style chung cho 2 chế độ 'Màn' */
+.scores.level-mode {
+  border: 2px solid #03a9f4; /* Viền xanh */
+  padding: 5px 10px;
+  border-radius: 6px;
+  background-color: #222;
+  color: #eee;
+  flex-wrap: wrap; 
+  justify-content: space-around;
+}
+
+.scores.level-mode span {
+  flex-basis: 45%; 
+  text-align: center;
+  padding: 2px 0;
+}
+
+/* Viền màu hồng cho chế độ Chướng ngại vật */
+.scores.obstacle-mode {
+  border-color: #e91e63;
+}
+
+/* --- CSS MỚI CHO VERSUS --- */
+.scores.versus-mode {
+  border-color: #f44336; /* Viền đỏ */
+}
+/* Style riêng cho Timer */
+.scores.versus-mode span:last-child {
+  color: #f44336;
+  font-weight: bold;
+}

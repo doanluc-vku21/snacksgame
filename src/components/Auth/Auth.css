@@ -1,0 +1,230 @@
+/* ================================================= */
+/* 1. THIẾT LẬP CHUNG / ROOT            */
+/* ================================================= */
+:root {
+    /* Màu sắc Cyberpunk / Neon */
+    --color-primary: #00f0ff; /* Cyan Neon */
+    --color-secondary: #ff0077; /* Magenta Neon */
+    --color-text: #e5e5e5; /* Text sáng */
+    --color-background-dark: #0a0a1a; /* Nền rất tối */
+    --color-surface-dark: #1e1e3f; /* Bề mặt hơi sáng hơn */
+    --color-error: #ff3366; /* Đỏ lỗi */
+
+    /* Hiệu ứng bóng */
+    --shadow-neon: 0 0 15px var(--color-primary), 0 0 30px var(--color-primary);
+    --shadow-inset: inset 0 0 8px rgba(0, 240, 255, 0.5);
+
+    /* Bo tròn */
+    --border-radius-main: 12px;
+}
+
+/* Áp dụng font và nền cho toàn trang */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--color-background-dark);
+    color: var(--color-text);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Hiệu ứng Hạt nền tinh tế */
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+}
+
+/* ================================================= */
+/* 2. CONTAINER CHÍNH CỦA AUTH           */
+/* ================================================= */
+
+.auth-page-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.auth-container {
+    /* Kích thước và căn chỉnh */
+    position: relative;
+    width: 90%;
+    /* TĂNG max-width TỪ 420px LÊN 480px HOẶC HƠN */
+    width: 480px; 
+    /* TĂNG max-width để có thêm không gian */
+    max-width: 480px; 
+    /* GIẢM PADDING XUỐNG CÒN 30px (hoặc giữ 35px nếu bạn muốn rộng hơn) */
+    padding: 30px; 
+    margin: 20px;
+    
+    /* Các thuộc tính Glassmorphism/Neon khác giữ nguyên */
+    background-color: rgba(30, 30, 63, 0.85); 
+    border: 2px solid var(--color-primary); 
+    border-radius: var(--border-radius-main);
+    backdrop-filter: blur(8px); 
+    box-shadow: 0 4px 60px rgba(0, 0, 0, 0.5), var(--shadow-neon); 
+    
+    z-index: 10;
+    overflow: hidden; 
+    text-align: center;
+}
+
+.auth-container h2 {
+    color: var(--color-primary);
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2em;
+    font-weight: 700;
+    text-shadow: 0 0 10px rgba(0, 240, 255, 0.7); /* Thêm chút bóng text */
+    letter-spacing: 1.5px;
+}
+
+/* ================================================= */
+/* 3. TRƯỜNG INPUT & FORM                */
+/* ================================================= */
+
+.auth-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.auth-container input {
+    width: 100%;
+    box-sizing: border-box; /* SỬA LỖI: Đảm bảo padding không làm tràn layout */
+    padding: 15px;
+    background-color: var(--color-surface-dark);
+    border: 1px solid #3a3a5a;
+    border-radius: var(--border-radius-main);
+    color: var(--color-text);
+    font-size: 1em;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-inset);
+}
+
+.auth-container input::placeholder {
+    color: #888;
+}
+
+/* Hiệu ứng Focus siêu tuyệt đỉnh */
+.auth-container input:focus {
+    outline: none;
+    border-color: var(--color-secondary);
+    box-shadow: 0 0 15px rgba(255, 0, 119, 0.5), inset 0 0 5px rgba(255, 0, 119, 0.8);
+    background-color: #2a2a4c;
+    transform: scale(1.02); /* Hiệu ứng phồng nhẹ */
+}
+
+/* ================================================= */
+/* 4. NÚT SUBMIT                         */
+/* ================================================= */
+
+.auth-container button[type="submit"] {
+    padding: 15px;
+    margin-top: 10px;
+    background-color: var(--color-secondary);
+    color: var(--color-background-dark);
+    font-size: 1.1em;
+    font-weight: 700;
+    border: none;
+    border-radius: var(--border-radius-main);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    box-shadow: 0 0 10px rgba(255, 0, 119, 0.5); /* Bóng neon mặc định */
+}
+
+/* Hiệu ứng Hover/Focus nút Submit */
+.auth-container button[type="submit"]:hover:not(:disabled) {
+    background-color: #ff3399;
+    box-shadow: 0 0 20px var(--color-secondary), 0 0 40px var(--color-secondary);
+    transform: translateY(-2px);
+}
+
+/* Trạng thái Loading / Disabled */
+.auth-container button[type="submit"]:disabled {
+    background-color: #4a4a6a;
+    cursor: not-allowed;
+    box-shadow: none;
+    opacity: 0.7;
+    transform: none;
+}
+
+/* ================================================= */
+/* 5. NÚT CHUYỂN TRẠNG THÁI              */
+/* ================================================= */
+
+.toggle-btn {
+    background: none;
+    border: none;
+    color: var(--color-primary);
+    margin-top: 20px;
+    cursor: pointer;
+    font-size: 0.9em;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+    white-space: nowrap; /* SỬA LỖI: Ngăn văn bản xuống dòng */
+    align-self: center;
+}
+
+.toggle-btn:hover {
+    color: var(--color-secondary);
+    text-shadow: 0 0 5px rgba(0, 240, 255, 0.5);
+}
+
+/* ================================================= */
+/* 6. THÔNG BÁO LỖI                      */
+/* ================================================= */
+
+.error {
+    color: var(--color-error);
+    background-color: rgba(255, 51, 102, 0.1);
+    border: 1px solid var(--color-error);
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 10px;
+    text-align: center;
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ================================================= */
+/* 7. HIỆU ỨNG CON RẮN NỀN              */
+/* ================================================= */
+
+.background-snake-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Quan trọng: nằm dưới nội dung form */
+    z-index: 1; 
+    pointer-events: none; /* Không chặn click */
+    overflow: hidden;
+}
+
+.snake-segment {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: var(--color-primary);
+    border-radius: 50%;
+    transition: background-color 0.2s, box-shadow 0.2s; /* Dịu mắt hơn */
+    box-shadow: 0 0 5px var(--color-primary); /* Bóng neon nhẹ cho thân */
+}
+
+.snake-head {
+    /* Đầu rắn sẽ nổi bật hơn */
+    background-color: var(--color-secondary);
+    width: 12px;
+    height: 12px;
+    box-shadow: 0 0 10px var(--color-secondary), 0 0 20px var(--color-secondary); 
+    transform: scale(1.1);
+}

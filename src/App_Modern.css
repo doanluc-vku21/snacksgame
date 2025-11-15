@@ -1,0 +1,389 @@
+/* =========================================
+   CSS "SIÊU ĐỈNH" HIỆN ĐẠI (GLASSMORPHISM)
+   ========================================= */
+
+/* --- THIẾT LẬP TOÀN CỤC --- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+:root {
+  /* Biến màu cho các nút (dễ quản lý) */
+  --color-classic: #f44336;
+  --color-levels: #03a9f4;
+  --color-obstacles: #e91e63;
+  --color-versus: #9c27b0; /* Đổi màu versus */
+  --color-customize: #ff9800;
+  --color-missions: #ffeb3b;
+  --color-tutorial: #00bcd4; /* Đổi màu hướng dẫn */
+  --color-settings: #6c757d;
+  --color-leaderboard: linear-gradient(45deg, #ffc107, #ff9800);
+  --color-back: #6c757d;
+}
+
+body {
+  background-color: #121212;
+  /* ✨ Thêm background gradient hiện đại */
+  background-image: radial-gradient(circle at 10% 10%, 
+    rgba(76, 175, 80, 0.1), 
+    rgba(18, 18, 18, 0.1) 30%
+  ), radial-gradient(circle at 90% 80%, 
+    rgba(3, 169, 244, 0.1), 
+    rgba(18, 18, 18, 0.1) 40%
+  );
+  color: #e0e0e0;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  margin: 0;
+  padding: 20px;
+  overflow-y: scroll; /* Luôn có thanh cuộn để tránh giật layout */
+}
+
+/* --- LỚP BỌC TOÀN BỘ APP --- */
+.app-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Căn trên cùng */
+  min-height: 95vh;
+}
+
+/* --- KHUNG CHÍNH (HIỆU ỨNG KÍNH MỜ) --- */
+.game-container {
+  width: 100%;
+  max-width: 680px; /* Rộng hơn 1 chút */
+  margin: 0 auto;
+  text-align: center;
+  
+  /* ✨ Hiệu ứng Glassmorphism */
+  background: rgba(25, 25, 25, 0.6); /* Nền mờ */
+  border: 1px solid rgba(255, 255, 255, 0.1); /* Viền sáng */
+  border-radius: 24px; /* Bo tròn nhiều hơn */
+  padding: 20px 30px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3); /* Đổ bóng */
+  backdrop-filter: blur(10px); /* Hiệu ứng mờ kính */
+  
+  /* Chống lỗi tràn viền */
+  overflow: hidden;
+}
+
+.auth-container {
+  max-width: 450px;
+  margin-top: 5vh;
+}
+
+/* --- HEADER MỚI (SIÊU ĐỈNH) --- */
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  background: rgba(0, 0, 0, 0.2); /* Nền mờ nhẹ */
+  border-radius: 16px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.user-info {
+  font-size: 0.95em;
+  color: #ccc;
+}
+.user-info strong {
+  color: #fff;
+  font-weight: 600;
+}
+
+.coin-balance {
+  font-size: 1.5em;
+  font-weight: 700;
+  color: #ffc107; /* Vàng gold */
+  text-shadow: 0 0 8px rgba(255, 193, 7, 0.5);
+  display: flex;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 5px 12px;
+  border-radius: 10px;
+}
+
+.logout-btn {
+  background: linear-gradient(45deg, #e53935, #f44336);
+  border: none;
+  border-radius: 10px;
+  color: white;
+  padding: 10px 18px;
+  font-size: 0.9em;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(244, 67, 54, 0.3);
+  transition: all 0.2s ease-in-out;
+}
+.logout-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(244, 67, 54, 0.5);
+}
+.logout-btn:active {
+  transform: scale(0.98);
+}
+
+
+/* --- TIÊU ĐỀ GAME (GRADIENT) --- */
+.game-title {
+  font-size: 3rem; /* 48px */
+  font-weight: 700;
+  margin: 0;
+  
+  /* ✨ Hiệu ứng text Gradient */
+  background: linear-gradient(90deg, #4caf50, #03a9f4, #9c27b0);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
+  /* ✨ Hiệu ứng Animation */
+  animation: text-gradient-flow 10s ease infinite;
+}
+
+@keyframes text-gradient-flow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* --- NÚT BẢNG XẾP HẠNG (GIỮ NGUYÊN) --- */
+.leaderboard-toggle-btn {
+  display: inline-block;
+  padding: 12px 25px;
+  margin: 20px 0;
+  font-size: 18px;
+  font-weight: 600; /* Đổi thành 600 */
+  color: #fff;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  background: var(--color-leaderboard);
+  background-size: 200% 100%;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(255, 152, 0, 0.4);
+  transition: all 0.4s ease-in-out;
+}
+
+.leaderboard-toggle-btn:hover {
+  background-position: 100% 0;
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(255, 152, 0, 0.6);
+}
+
+.leaderboard-toggle-btn:active {
+  transform: translateY(0) scale(1);
+  box-shadow: 0 4px 15px rgba(255, 152, 0, 0.4);
+}
+
+/* --- KHU VỰC NỘI DUNG CHÍNH (MENU, GAME...) --- */
+.main-content-area {
+  margin-top: 15px;
+  position: relative; /* Cho .game-area */
+}
+
+.main-menu h2 {
+  font-size: 1.8em;
+  font-weight: 600;
+  color: #eee;
+  margin-top: 0;
+  margin-bottom: 25px;
+}
+
+/* --- ✨ KHUNG CHỨA NÚT MENU (FLEXBOX SIÊU ĐỈNH) --- */
+.game-mode-select {
+  display: flex;
+  flex-wrap: wrap; /* Tự động xuống hàng */
+  gap: 15px; /* Khoảng cách giữa các nút */
+  justify-content: center;
+}
+
+/* --- ✨ NÚT BẤM MENU CHÍNH (HIỆN ĐẠI) --- */
+.game-mode-select .start-btn {
+  /* Kích thước & Layout */
+  flex-grow: 1; /* Tự co giãn */
+  flex-basis: 200px; /* Kích thước cơ bản */
+  min-width: 180px; /* Chiều rộng tối thiểu */
+  padding: 18px 20px;
+  
+  /* Font */
+  font-size: 1.1rem; /* 17.6px */
+  font-weight: 600;
+  color: #ffffff;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  
+  /* Hình thức */
+  border: none;
+  border-radius: 14px; /* Bo tròn hiện đại */
+  cursor: pointer;
+  
+  /* ✨ Hiệu ứng nút 3D/Gradient */
+  --btn-shadow-color: rgba(0,0,0,0.3);
+  background: var(--btn-bg, linear-gradient(135deg, 
+    rgba(255, 255, 255, 0.1), 
+    rgba(255, 255, 255, 0.05)
+  ));
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 5px 15px var(--btn-shadow-color);
+  
+  /* ✨ Hiệu ứng chuyển động mượt mà */
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.game-mode-select .start-btn:hover {
+  transform: scale(1.03) translateY(-3px);
+  /* Sáng lên khi hover */
+  border-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 8px 25px var(--btn-shadow-color);
+}
+
+.game-mode-select .start-btn:active {
+  transform: scale(0.98) translateY(1px);
+  box-shadow: 0 2px 10px var(--btn-shadow-color);
+}
+
+/* --- ✨ TÙY CHỈNH MÀU SẮC CHO TỪNG NÚT --- */
+.game-mode-select .classic-btn {
+  --btn-bg: linear-gradient(135deg, var(--color-classic), color-mix(in srgb, var(--color-classic) 60%, black));
+  --btn-shadow-color: color-mix(in srgb, var(--color-classic) 30%, transparent);
+}
+.game-mode-select .levels-btn {
+  --btn-bg: linear-gradient(135deg, var(--color-levels), color-mix(in srgb, var(--color-levels) 60%, black));
+  --btn-shadow-color: color-mix(in srgb, var(--color-levels) 30%, transparent);
+}
+.game-mode-select .obstacles-btn {
+  --btn-bg: linear-gradient(135deg, var(--color-obstacles), color-mix(in srgb, var(--color-obstacles) 60%, black));
+  --btn-shadow-color: color-mix(in srgb, var(--color-obstacles) 30%, transparent);
+}
+.game-mode-select .versus-btn {
+  --btn-bg: linear-gradient(135deg, var(--color-versus), color-mix(in srgb, var(--color-versus) 60%, black));
+  --btn-shadow-color: color-mix(in srgb, var(--color-versus) 30%, transparent);
+}
+.game-mode-select .customize-btn {
+  --btn-bg: linear-gradient(135deg, var(--color-customize), color-mix(in srgb, var(--color-customize) 60%, black));
+  --btn-shadow-color: color-mix(in srgb, var(--color-customize) 30%, transparent);
+}
+.game-mode-select .missions-btn {
+  --btn-bg: linear-gradient(135deg, var(--color-missions), color-mix(in srgb, var(--color-missions) 70%, #333));
+  --btn-shadow-color: color-mix(in srgb, var(--color-missions) 30%, transparent);
+  color: #333; /* Chữ đen cho nút vàng */
+  text-shadow: none;
+}
+.game-mode-select .tutorial-btn {
+  --btn-bg: linear-gradient(135deg, var(--color-tutorial), color-mix(in srgb, var(--color-tutorial) 60%, black));
+  --btn-shadow-color: color-mix(in srgb, var(--color-tutorial) 30%, transparent);
+}
+.game-mode-select .settings-btn {
+  --btn-bg: linear-gradient(135deg, var(--color-settings), color-mix(in srgb, var(--color-settings) 60%, black));
+  --btn-shadow-color: color-mix(in srgb, var(--color-settings) 30%, transparent);
+}
+
+/* --- MENU CHỌN MÀN VERSUS --- */
+.game-mode-select.versus-menu {
+  flex-direction: column; /* Xếp dọc */
+  align-items: center; /* Căn giữa */
+  gap: 20px;
+}
+.game-mode-select .versus-level-btn {
+  --btn-bg: linear-gradient(135deg, var(--color-versus), color-mix(in srgb, var(--color-versus) 60%, black));
+  --btn-shadow-color: color-mix(in srgb, var(--color-versus) 30%, transparent);
+  width: 300px; /* Rộng hơn 1 chút */
+  max-width: 100%;
+}
+.game-mode-select .back-to-main-menu-btn {
+  --btn-bg: linear-gradient(135deg, var(--color-back), color-mix(in srgb, var(--color-back) 60%, black));
+  --btn-shadow-color: color-mix(in srgb, var(--color-back) 30%, transparent);
+  width: 300px;
+  max-width: 100%;
+  margin-top: 10px;
+}
+
+/* --- KHU VỰC CHƠI GAME --- */
+.game-area {
+  position: relative;
+  width: 100%;
+}
+
+/* --- NÚT PAUSE (HIỆN ĐẠI HƠN) --- */
+.pause-btn {
+  position: absolute;
+  top: -15px; /* Nằm trên Scoreboard */
+  right: 10px;
+  
+  /* ✨ Hiệu ứng Glass */
+  background: rgba(244, 67, 54, 0.5); /* Đỏ mờ */
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  color: white;
+  border-radius: 50%; /* Tròn */
+  width: 44px;
+  height: 44px;
+  font-size: 22px;
+  line-height: 44px;
+  text-align: center;
+  cursor: pointer;
+  z-index: 10;
+  box-shadow: 0 4px 15px rgba(244, 67, 54, 0.4);
+  transition: all 0.2s ease-in-out;
+}
+.pause-btn:hover {
+  background: rgba(244, 67, 54, 0.8);
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(244, 67, 54, 0.6);
+}
+
+/* --- MÀN HÌNH READY --- */
+.ready-overlay {
+  position: absolute; /* Đổi thành absolute */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-shadow: 0 0 10px #000;
+  z-index: 5; /* Nằm trên game, dưới pause */
+}
+.ready-overlay h3 {
+  font-size: 2.5em;
+  color: #fff;
+  margin: 0;
+  animation: pulse-ready 1.5s infinite;
+}
+.ready-overlay p {
+  font-size: 1.5em;
+  color: #4caf50;
+  margin: 10px 0 0 0;
+}
+
+@keyframes pulse-ready {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.05); opacity: 0.8; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* --- STYLE PHỤ TRỢ (TỪ FILE CŨ) --- */
+.cell.obstacle {
+  background-color: #795548;
+  border: 1px solid #4e342e;
+  border-radius: 2px;
+  box-shadow: inset 0 0 5px black;
+}
+
+.overlay .win-btn {
+  background: #03a9f4;
+  font-size: 20px;
+  padding: 15px 30px;
+}
+.overlay .win-btn:hover {
+  background: #0288d1;
+}
+.overlay .versus-win-btn {
+  background: #4caf50;
+  font-size: 20px;
+  padding: 15px 30px;
+}
+.overlay .versus-win-btn:hover {
+  background: #66bb6a;
+}

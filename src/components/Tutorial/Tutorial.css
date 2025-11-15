@@ -1,0 +1,178 @@
+/* Kế thừa .customizer-container và .customizer-header */
+/* từ file ../SnakeCustomizer/SnakeCustomizer.css */
+
+/* === THANH CUỘN CHO CỬA HÀNG & HƯỚNG DẪN === */
+.customizer-content {
+  max-height: 450px; /* Giới hạn chiều cao */
+  overflow-y: auto;  /* Thêm thanh cuộn khi nội dung dài hơn */
+  padding-right: 15px; /* Tạo khoảng trống cho thanh cuộn */
+  margin-right: -15px; /* Bù lại padding để nội dung không bị lệch */
+}
+
+.tutorial-content {
+  margin-top: 10px;
+  max-height: 400px; /* Thêm thanh cuộn nếu quá dài */
+  overflow-y: auto;
+  padding-right: 15px; /* Chỗ cho thanh cuộn */
+}
+
+.tutorial-content h3 {
+  color: #4caf50;
+  border-bottom: 1px solid #444;
+  padding-bottom: 5px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.tutorial-content p {
+  line-height: 1.6;
+  color: #ccc;
+  margin: 0;
+}
+
+.tutorial-content ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 10px 0;
+}
+
+.tutorial-content ul li {
+  position: relative;
+  line-height: 1.6;
+  padding-left: 25px; /* Tạo khoảng trống cho icon */
+  margin-bottom: 10px;
+  color: #ccc;
+}
+
+/* Dùng icon '::before' cho đẹp */
+.tutorial-content ul li::before {
+  content: "»"; /* Dấu mũi tên */
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #4caf50;
+  font-weight: bold;
+}
+
+/* Style riêng cho danh sách có icon emoji */
+.tutorial-list li {
+  padding-left: 40px; /* Nhiều khoảng trống hơn */
+}
+.tutorial-list li::before {
+  content: ""; /* Xóa dấu '»' */
+}
+.tutorial-list .powerup-icon {
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 1.5em; /* Emoji to */
+  line-height: 1;
+}
+
+/* Tùy chỉnh thanh cuộn cho cả Cửa hàng và Hướng dẫn */
+.customizer-content::-webkit-scrollbar,
+.tutorial-content::-webkit-scrollbar {
+  width: 8px;
+}
+.customizer-content::-webkit-scrollbar-track,
+.tutorial-content::-webkit-scrollbar-track {
+  background: #111;
+  border-radius: 4px;
+}
+.customizer-content::-webkit-scrollbar-thumb,
+.tutorial-content::-webkit-scrollbar-thumb {
+  background-color: #4caf50;
+  border-radius: 4px;
+}
+/* =========================================
+=== CSS "SIÊU ĐỈNH" CHO MỤC NHIỆM VỤ ===
+=========================================
+*/
+
+.tutorial-content h4 {
+  color: #f39c12; /* Màu cam/vàng cho phụ đề nổi bật */
+  font-size: 1.1em;
+  margin-top: 20px;
+  margin-bottom: 8px;
+  border-bottom: 1px dashed #444;
+  padding-bottom: 4px;
+}
+
+/* Danh sách nhiệm vụ mới */
+.mission-tutorial-list {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 15px 0;
+}
+
+.mission-tutorial-list li {
+  display: flex; /* Dùng flexbox cho icon + text */
+  align-items: center;
+  /* Nền mờ siêu ngầu */
+  background: rgba(30, 30, 30, 0.7); 
+  border: 1px solid #333;
+  /* Thêm viền màu xanh lá bên trái */
+  border-left: 4px solid #4caf50; 
+  border-radius: 8px;
+  padding: 12px 15px;
+  margin-bottom: 10px;
+  /* Hiệu ứng 3D nhẹ */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease-in-out;
+
+  /* Ghi đè CSS cũ */
+  padding-left: 15px !important; 
+  color: #ccc;
+}
+
+.mission-tutorial-list li:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  border-left-color: #f39c12; /* Đổi màu viền khi hover */
+}
+
+/* Xóa dấu '»' của CSS cũ */
+.mission-tutorial-list li::before {
+  content: none !important; 
+}
+
+/* Icon (emoji) */
+.mission-tutorial-list .mission-icon {
+  font-size: 2.2em; /* Icon to, rõ ràng */
+  margin-right: 15px;
+  line-height: 1;
+  /* Hiệu ứng icon nổi */
+  filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.5));
+}
+
+.mission-tutorial-list li div {
+  display: flex;
+  flex-direction: column;
+}
+
+.mission-tutorial-list li strong {
+  font-size: 1.15em;
+  color: #fff; /* Chữ trắng cho tiêu đề */
+  margin-bottom: 3px;
+  font-weight: 600;
+}
+
+/* Thêm màu sắc riêng biệt */
+.mission-daily strong {
+  color: #3498db; /* Màu xanh dương cho Daily */
+}
+
+.mission-weekly strong {
+  color: #9b59b6; /* Màu tím cho Weekly */
+}
+
+.mission-tutorial-list li span {
+  font-size: 0.9em;
+  color: #aaa; /* Chữ xám nhạt cho mô tả */
+  line-height: 1.4;
+}
+.customizer-container.tutorial-container{
+  margin-top: 0px ;
+  margin-left: -20px;
+
+}
